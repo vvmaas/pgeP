@@ -10,3 +10,14 @@ export async function getCursos() {
     );
     return response.data;
   }
+
+  export async function postCurso(body) {
+    const response = await api.post('/cursos/', body,
+    // {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // }
+    );
+    return response.data;
+  }

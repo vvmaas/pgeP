@@ -17,7 +17,7 @@ class Aluno(models.Model):
     nome = models.CharField(max_length=50);
     cpf = models.CharField(max_length=11, validators=[MinLengthValidator(11)], unique=True);
     email = models.EmailField(max_length=254);
-    cursos = models.ManyToManyField(Curso)
+    cursos = models.ManyToManyField(Curso);
 
     def __str__(self):
         return str(self.id)
