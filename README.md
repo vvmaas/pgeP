@@ -32,7 +32,7 @@ Ative o venv
 Inicie o servidor back-end
 
 ```bash
-  source venv/bin/activate
+  python manage.py runserver
 ```
 
 Vá para pasta do front-end do projeto
