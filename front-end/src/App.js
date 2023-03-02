@@ -9,7 +9,7 @@ function App() {
     <>
       <Router>
         <Routes>
-        <Route index path="*" element={<Navigate to="/app/alunos" />} />
+        <Route index path="*" element={<Navigate to="/app/cursos" />} />
           <Route
             path="/app"
             element={

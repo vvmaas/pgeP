@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 
 import { AlunoLine } from "./AlunoLine";
 import { AddAluno } from "./AddAluno";
@@ -24,7 +25,7 @@ function RenderAlunos(props) {
     const { alunos } = props;
 
     return (
-        <>
+        <Container>
             {alunos[0] ? (<div>
                 {alunos?.map(aluno => {
                     return (
@@ -38,6 +39,14 @@ function RenderAlunos(props) {
                 'Não há alunos registrados'
             )
         }
-        </>
+        </Container>
     )
 }
+
+const Container = styled.div`
+    width: 60%;
+    margin: 0 auto;
+    h5 {
+        width: 300px;
+    }
+`

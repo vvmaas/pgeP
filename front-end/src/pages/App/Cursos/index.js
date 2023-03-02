@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 
 import { CursoLine } from "./CursoLine";
 import { AddCurso } from "./AddCurso";
@@ -24,9 +25,9 @@ function RenderCursos(props) {
     const { cursos } = props;
 
     return (
-        <>
-        <CursoLine nome="Curso" carga_horaria="Carga horária" />
+        <Container>
             {cursos[0] ? (<div>
+                <CursoLine nome="Curso" carga_horaria="Carga horária" />
                 {cursos?.map(curso => {
                     return (
                         <>
@@ -36,9 +37,17 @@ function RenderCursos(props) {
                 })}
             </div>
             ) : (
-                'Não há cursos registrados'
+                <h5>Não há cursos registrados</h5>
             )
         }
-        </>
+        </Container>
     )
 }
+
+const Container = styled.div`
+    width: 60%;
+    margin: 0 auto;
+    h5 {
+        width: 300px;
+    }
+`

@@ -19,7 +19,8 @@ export function AddAluno() {
                         Cadastrar novo aluno
                     </Button>
                 : 
-                ""
+                <>
+                </>
             }
         </Container>
     )
@@ -66,6 +67,7 @@ function AddAlunoPopUp({ setCadastro, Cursos }) {
       }
 
     return (
+        
         <ContainerAdd>
             <h1>Adicionar aluno</h1>
             <form onSubmit={submit}>
@@ -82,14 +84,16 @@ function AddAlunoPopUp({ setCadastro, Cursos }) {
                 onChange={(e) => setEmail(e.target.value)}/>
 
                 <h4>Selecione os cursos: </h4>
-                    {Cursos.map(curso => {
-                        return(
-                            <CheckBoxWrapper key={curso.id}>
-                                <label>{curso.nome}</label>
-                                <input id={curso.id} type="checkbox" value={curso.id} onChange={(e) => handleCheckBoxes(e.target.value)} />
-                            </CheckBoxWrapper>
-                        )
-                    })}
+                    {
+                        Cursos.map(curso => {
+                            return(
+                                <CheckBoxWrapper key={curso.id}>
+                                    <label>{curso.nome}</label>
+                                    <input id={curso.id} type="checkbox" value={curso.id} onChange={(e) => handleCheckBoxes(e.target.value)} />
+                                </CheckBoxWrapper>
+                            )
+                        }) 
+                    }
                 
                 <Button type="submit" color="primary" disabled={postAlunoLoading}>
                     Cadastrar
@@ -106,6 +110,9 @@ const Container = styled.div`
     width: 60%;
     padding-bottom: 15px;
     border-bottom: solid 2px lightgrey;
+    h2 {
+        margin-top: 5px;
+    }
 `
 
 const ContainerAdd = styled.div`
