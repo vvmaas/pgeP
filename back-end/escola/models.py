@@ -15,8 +15,7 @@ class Curso(models.Model):
 
 class Aluno(models.Model):
     nome = models.CharField(max_length=50);
-    cpf = models.CharField(max_length=11, validators=[MinLengthValidator(11)], unique=True);
-    email = models.EmailField(max_length=254);
+    email = models.EmailField(max_length=254, unique=True);
     cursos = models.ManyToManyField(Curso);
 
     def __str__(self):
